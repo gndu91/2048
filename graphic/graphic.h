@@ -3,10 +3,36 @@
 
     #include "../main.h"
 
-    int Main();
-    int Main(){
-        return 1;
+    namespace cmd {
+        int Main();
+        void afficheGrille ( Grille g);
+        namespace affichage {
+            void resizeScreen(unsigned short int w,
+                              unsigned short int h);
+            void setTitle(string title);
+            void drawContent(Grille L1cache,
+                             Grille L2cache);
+        }
     }
-    void afficheGrille ( Grille g) {}
+
+    namespace sdl {
+        int Main();
+        void afficheGrille ( Grille g);
+        namespace affichage {
+            void resizeScreen(unsigned short int w,
+                              unsigned short int h);
+            void setTitle(string title);
+        }
+    }
+
+    namespace opengl {
+        int Main();
+        void afficheGrille ( Grille g);
+        namespace affichage {
+            void resizeScreen(unsigned short int w,
+                              unsigned short int h);
+            void setTitle(string title);
+        }
+    }
 
 #endif // GRAPHIC_H_INCLUDED
