@@ -5,13 +5,18 @@
 
 
 namespace cmd {
-    void jeu (void){
-
+    void jeu (void) {
+        affichage::resizeScreen(SCREEN_WIDTH,SCREEN_HEIGHT);
+        affichage::setTitle("Game");
     }
 }
 namespace opengl {
-    void jeu (void){}
+    void jeu (void) {
+
+    }
 }
 namespace sdl {
-    void jeu (void){}
+    void jeu (void) {
+
+    }
 }
