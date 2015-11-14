@@ -1,5 +1,5 @@
 #include "main.h"
 
-int main(int, char*[]) {
+int main(int, char**) {
     return Main();
 }
