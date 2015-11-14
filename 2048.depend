@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1447461355 source:c:\2048\main.cpp
+1447469191 source:c:\2048\main.cpp
 	"main.h"
 
-1447461645 c:\2048\main.h
+1447468613 c:\2048\main.h
 	<vector>
+	<cstdlib>
 	"jeu/jeu.h"
 	"grille/grille.h"
 	"graphic/graphic.h"
@@ -13,12 +14,9 @@
 	<SDL2/SDL.h>
 	<iostream>
 
-1447460440 c:\2048\jeu\jeu.h
+1447468190 c:\2048\jeu\jeu.h
 
-1447460996 c:\2048\grille\grille.h
-	<vector>
-	<iostream>
-	<cstdlib>
+1447468606 c:\2048\grille\grille.h
 	"../main.h"
 
 1447176626 c:\program files (x86)\codeblocks\sdl-2.0\include\sdl2\sdl.h
@@ -311,6 +309,15 @@
 	"begin_code.h"
 	"close_code.h"
 
-1447461661 c:\2048\graphic\graphic.h
+1447468957 c:\2048\graphic\graphic.h
 	"../main.h"
+
+1447469014 source:c:\2048\graphic\graphic.cpp
+	"graphic.h"
+
+1447468806 source:c:\2048\jeu\jeu.cpp
+	"jeu.h"
+
+1447468550 source:c:\2048\grille\grille.cpp
+	"grille.h"
 
