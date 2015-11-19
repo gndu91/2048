@@ -92,3 +92,5 @@ typedef vector<int>         Ligne   ;
 
 #define CACHE_HEIGHT        SCREEN_HEIGHT   -   CACHE_MARGIN_UP     - CACHE_MARGIN_DOWN
 #define CACHE_WIDTH         SCREEN_WIDTH    -   CACHE_MARGIN_LEFT   - CACHE_MARGIN_RIGHT
+
+#define CHAR_VOID ' '
