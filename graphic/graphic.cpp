@@ -28,11 +28,11 @@ namespace cmd {
             SetConsoleTitle(title.c_str());
         }
         void drawContent(Grille L1, Grille L2) {
-            setPos(0,0);
             /** TODO (Ghoul Nadir#1#11/14/15): Verify caches sizes */
             for(int j = 0; j < CACHE_HEIGHT; ++j)
                 for(int i = 0; i < CACHE_WIDTH; ++i)
                     if(L1.at(j).at(i) != L2.at(j).at(i)) {
+                        setPos(i,j);
                         cout << L2.at(j).at(i);
                         L1.at(j).at(i) = L2.at(j).at(i);
                     }
