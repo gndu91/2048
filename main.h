@@ -162,8 +162,6 @@ using namespace std;
 
     #define TITLE_STYLE_2
 
-typedef vector<vector<int>> Grille  ;
-typedef vector<int>         Ligne   ;
     #define CASE_SPACE 5
     #warning TODO (Ghoul Nadir#1#11/21/15): Auto resize it
     #define charSize   CASE_SPACE
