@@ -41,39 +41,42 @@
     #define BAS     2
 
 using namespace std;
-#ifdef SDL
-    namespace sdl {
-        int main(int,char**);
-    }
-    using namespace sdl;
-    #include <string>
-    #include <SDL2/SDL.h>
-
-#else
-    #ifdef OPENGL
-        namespace opengl {
+    #ifdef SDL
+        namespace sdl {
             int main(int,char**);
         }
-        using namespace opengl;
+        using namespace sdl;
         #include <string>
         #include <SDL2/SDL.h>
+
     #else
-        namespace cmd {
-            int main(int,char**);
-        }
-        using namespace cmd;
-        #include <iostream>
-        #ifdef WINDOWS
-            #define COMMAND_CLEAR "cls"
-            #define COMMAND_RESIZE "mode"
-            #include <windows.h>
+        #ifdef OPENGL
+            namespace opengl {
+                int main(int,char**);
+            }
+            using namespace opengl;
+            #include <string>
+            #include <SDL2/SDL.h>
         #else
-            #ifdef LINUX
-                 #define COMMAND_CLEAR "clean"
+            namespace cmd {
+                int main(int,char**);
+            }
+            using namespace cmd;
+            #include <iostream>
+            #ifdef WINDOWS
+                #define COMMAND_CLEAR "cls"
+                #define COMMAND_RESIZE "mode"
+                #include <windows.h>
             #else
-                #error no OS specified
-            #endif // LINUX
-        #endif // WINDOWS
+                #ifdef LINUX
+                     #define COMMAND_CLEAR "clean"
+                #else
+                    #error no OS specified
+                #endif // LINUX
+            #endif // WINDOWS
+
+        #endif // OPENGL
+    #endif // SDL
     #define CHAR_VOID ' '
     #define  DOUBLE_LINES
     #ifdef STARS
