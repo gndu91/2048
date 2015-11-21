@@ -9,7 +9,7 @@
         namespace affichage {
             void resizeScreen(unsigned short int w,
                               unsigned short int h);
-            void setTitle(string title);
+            void setTitle(string Title);
             void drawContent(Grille L1cache,
                              Grille L2cache);
         }
