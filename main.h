@@ -1,28 +1,35 @@
-#include <vector>
-#include <cmath>
-#include <cstdlib>
+/** Define constants    */
+    /**< About system   */
+        #define WINDOWS
 
-#define WINDOWS
+/** Include libraries */
 
-#ifndef JINC
-    #define JINC
-    #include "jeu/jeu.h"
-#endif // JINC
+    /** Defaults */
+        #include <vector>
+        #include <cmath>
+        #include <cstdlib>
+        #include <ctime>
 
-#ifndef GINC
-    #define GINC
-    #include "grille/grille.h"
-#endif // GINC
+    /**< Of the project */
+        #ifndef JINC
+            #define JINC
+            #include "jeu/jeu.h"
+        #endif // JINC
 
-#ifndef G2INC
-    #define G2INC
-    #include "graphic/graphic.h"
-#endif // G2INC
+        #ifndef GINC
+            #define GINC
+            #include "grille/grille.h"
+        #endif // GINC
 
-#ifndef F2INC
-    #define F2INC
-    #include "functions/functions.h"
-#endif // F2INC
+        #ifndef G2INC
+            #define G2INC
+            #include "graphic/graphic.h"
+        #endif // G2INC
+
+        #ifndef F2INC
+            #define F2INC
+            #include "functions/functions.h"
+        #endif // F2INC
 
 /**< To avoid redefinitions, I've replaced const int by define */
     #define GRILL_WIDTH     4
