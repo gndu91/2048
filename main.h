@@ -160,8 +160,7 @@ using namespace std;
 
     #define CHAR_BLOCK 219
 
-    #endif // OPENGL
-#endif // SDL
+    #define TITLE_STYLE_2
 
 typedef vector<vector<int>> Grille  ;
 typedef vector<int>         Ligne   ;
