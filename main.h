@@ -165,16 +165,21 @@ using namespace std;
 
 typedef vector<vector<int>> Grille  ;
 typedef vector<int>         Ligne   ;
+    #define CASE_SPACE 5
+    #warning TODO (Ghoul Nadir#1#11/21/15): Auto resize it
+    #define charSize   CASE_SPACE
 
-#define FOOTER_HEIGHT 1
+    #define CHAR_LINE_HORIZONTAL    CHAR_LINE_H
+    #define CHAR_LINE_VERTICAL      CHAR_LINE_V
 
-#define HEADER_HEIGHT 3
+    #define GAME_SIZE_W 4
+    #define GAME_SIZE_H 4
 
-#define CACHE_MARGIN_UP     HEADER_HEIGHT
-#define CACHE_MARGIN_LEFT   1
-#define CACHE_MARGIN_RIGHT  1
-#define CACHE_MARGIN_DOWN   FOOTER_HEIGHT
+    #define UP      00
+    #define CENTER  50
+    #define DOWN    100
 
-#define CACHE_HEIGHT        SCREEN_HEIGHT   -   CACHE_MARGIN_UP     - CACHE_MARGIN_DOWN
-#define CACHE_WIDTH         SCREEN_WIDTH    -   CACHE_MARGIN_LEFT   - CACHE_MARGIN_RIGHT
+    #define LEFT    0
+    #define MIDDLE  5
+    #define RIGHT   10
 
