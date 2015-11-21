@@ -74,6 +74,65 @@ using namespace std;
                 #error no OS specified
             #endif // LINUX
         #endif // WINDOWS
+    #define CHAR_VOID ' '
+    #define  DOUBLE_LINES
+    #ifdef STARS
+        #define DOUBLE_LINES
+        #define SIMPLE_LINES
+    #endif // STARS
+
+    #ifndef DOUBLE_LINES
+        #define CHAR_LINE_H              196
+        #define CHAR_LINE_V              179
+
+        #define CHAR_CORNER_TOP_RIGHT    191
+        #define CHAR_CORNER_TOP_LEFT     218
+        #define CHAR_CORNER_BOTTOM_RIGHT 217
+        #define CHAR_CORNER_BOTTOM_LEFT  192
+
+        #define CHAR_T_BOTTOM            193
+        #define CHAR_T_TOP               194
+        #define CHAR_T_LEFT              195
+        #define CHAR_T_RIGHT             180
+
+        #define CHAR_CROSS               197
+    #endif // DOUBLE_LINES
+
+    #ifndef SIMPLE_LINES
+        #define CHAR_LINE_H              205
+        #define CHAR_LINE_V              186
+
+        #define CHAR_CORNER_TOP_RIGHT    187
+        #define CHAR_CORNER_TOP_LEFT     201
+        #define CHAR_CORNER_BOTTOM_RIGHT 188
+        #define CHAR_CORNER_BOTTOM_LEFT  200
+
+        #define CHAR_T_TOP               203
+        #define CHAR_T_BOTTOM            202
+        #define CHAR_T_LEFT              204
+        #define CHAR_T_RIGHT             185
+
+        #define CHAR_CROSS               206
+    #endif // SIMPLE_LINES
+
+    #ifdef STARS
+        #define CHAR_LINE_H              42///'*'
+        #define CHAR_LINE_V              42///'*'
+
+        #define CHAR_CORNER_TOP_RIGHT    42///'*'
+        #define CHAR_CORNER_TOP_LEFT     42///'*'
+        #define CHAR_CORNER_BOTTOM_RIGHT 42///'*'
+        #define CHAR_CORNER_BOTTOM_LEFT  42///'*'
+
+        #define CHAR_T_TOP               42///'*'
+        #define CHAR_T_BOTTOM            42///'*'
+        #define CHAR_T_LEFT              42///'*'
+        #define CHAR_T_RIGHT             42///'*'
+
+        #define CHAR_CROSS               42///'*'
+    #endif
+
+    #define CHAR_BLOCK 219
 
     #endif // OPENGL
 #endif // SDL
