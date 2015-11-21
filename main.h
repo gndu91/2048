@@ -84,6 +84,22 @@ using namespace std;
 
         #endif // OPENGL
     #endif // SDL
+
+    typedef vector<vector<int>> Grille  ;
+    typedef vector<int>         Ligne   ;
+
+    #define FOOTER_HEIGHT 1
+
+    #define HEADER_HEIGHT 3
+
+    #define CACHE_MARGIN_UP     HEADER_HEIGHT
+    #define CACHE_MARGIN_LEFT   1
+    #define CACHE_MARGIN_RIGHT  1
+    #define CACHE_MARGIN_DOWN   FOOTER_HEIGHT
+
+    #define CACHE_HEIGHT        SCREEN_HEIGHT   -   CACHE_MARGIN_UP     - CACHE_MARGIN_DOWN
+    #define CACHE_WIDTH         SCREEN_WIDTH    -   CACHE_MARGIN_LEFT   - CACHE_MARGIN_RIGHT
+
     #define CHAR_VOID ' '
     #define  DOUBLE_LINES
     #ifdef STARS
