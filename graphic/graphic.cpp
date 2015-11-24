@@ -190,3 +190,116 @@ namespace opengl {
         }
     }
 }
+/**
+
+namespace sdl {
+    SDL_Window* window(0);
+    SDL_Renderer *renderer = 0;
+    vector<surface> content;
+    Input input;
+    void init(string title) {
+        atexit(SDL_Quit);
+        if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+            cerr << "Error dith SDL : " << SDL_GetError() << endl;
+            SDL_Quit();
+            exit(-1);
+        }
+        SDL_CreateWindowAndRenderer(800, 600, 0, &window, &renderer); // SDL_WINDOW_SHOWN|SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC,&win,&ren);
+ /*
+        window = SDL_CreateWindow(title.c_str(),
+                                  SDL_WINDOWPOS_CENTERED,
+                                  SDL_WINDOWPOS_CENTERED,
+                                  800,
+                                  600,
+                                  SDL_WINDOW_SHOWN);
+        ///canvas =
+        ///SDL_FillRect(canvas, NULL, SDL_MapRGB(canvas->format, 17, 206, 112));
+    }
+    void hide() {
+        SDL_HideWindow(window);
+    }
+    void show() {
+        SDL_ShowWindow(window);
+    }
+    void destroy() {/**
+        for(auto s : content)
+            SDL_FreeSurface(s.content);
+        SDL_DestroyWindow(window);
+        SDL_DestroyRenderer(renderer);
+        SDL_Quit();
+    }
+    void update() {
+        /**for(auto s : content) {
+            SDL_SetRenderDrawColor(s.renderer, 255, 255, 0, 255);///, NULL, SDL_GetWindowSurface(window), &(s.position));
+            SDL_RenderClear(s.renderer);
+            SDL_RenderPresent(s.renderer);
+        }
+        SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
+        SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer);
+        ///SDL_UpdateWindowSurface(window);
+    }
+
+    int Main(){
+        content.push_back({});
+        SDL_SetRenderDrawColor(content.back().renderer, 255, 255, 0, 255);
+        init();
+        ///Input::showCursor(false);
+        ///SDL_GetTicks();
+        /**
+        for(auto s : content)
+            SDL_BlitSurface(s.content, NULL, SDL_GetWindowSurface(window), &(s.position));
+        SDL_UpdateWindowSurface(window);
+
+
+        // if all this hex scares you, check out SDL_PixelFormatEnumToMasks()!
+        /**SDL_Surface *scren = SDL_CreateRGBSurface(0, 640, 480, 32,
+                                        0x00FF0000,
+                                        0x0000FF00,
+                                        0x000000FF,
+                                        0xFF000000);
+        SDL_Texture *sdlTexture = SDL_CreateTexture(renderer,
+                                                    SDL_PIXELFORMAT_ARGB8888,
+                                                    SDL_TEXTUREACCESS_STREAMING,
+                                                    630,
+                                                    480);
+
+
+        SDL_UpdateTexture(sdlTexture,
+                          NULL,
+                          scren->pixels,
+                          scren->pitch);
+
+        SDL_RenderPresent(renderer);
+        SDL_RenderClear(renderer);
+
+        SDL_RenderCopy(renderer,
+                       sdlTexture,
+                       NULL,
+                       NULL);
+
+        SDL_RenderPresent(renderer);
+
+
+        while (not input.finished()) {
+            update();
+        }
+        destroy();
+        return 0;
+    }
+    void afficheGrille(Grille g) {
+
+    }
+    namespace affichage {
+        void resizeScreen(unsigned short int w, unsigned short int h) {
+            ///throw runtime_error("Missing function");
+        }
+        void setTitle(string title) {
+            cout << title;
+        }
+    }
+}
+
+        SDL_SetRenderDrawColor(renderer, i/2, j, i*j, 255);
+        SDL_RenderDrawPoint(renderer, i, j);
+*/
