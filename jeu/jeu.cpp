@@ -65,10 +65,19 @@ namespace cmd {
             cout << "Actual score is:\t" << score(grille) << endl;
 
             afficheGrille(grille);
-            exit(0);
+
+            do {
+                grille = deplacement(grille,getMove());
+            }while(grilleO == grille);
+
+            if(estTerminer(grille))
+                if(estGagnant(grille))
+                    if(_getch() == 'q')
+                        exit(5346);
         }
     }
 }
+
 namespace opengl {
     void jeu (void) {
 
