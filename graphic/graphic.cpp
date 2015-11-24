@@ -97,13 +97,15 @@ namespace cmd {
             #endif // WINDOWS
             #ifdef TITLE_STYLE_0
                 for(auto i = 0;i < SCREEN_WIDTH;++i)
-                    cout << char(CHAR_BLOCK);
+                    putch(char(CHAR_BLOCK));
                 for(auto i = 0;i < SCREEN_WIDTH;++i)
-                    cout << char(CHAR_BLOCK);
+                    putch(char(CHAR_BLOCK));
                 for(auto i = 0;i < SCREEN_WIDTH;++i)
-                    cout << char(CHAR_BLOCK);
+                    putch(char(CHAR_BLOCK));
                 setPos((SCREEN_WIDTH/2) - (Title.size()/2) -1 ,1);
-                cout << char(CHAR_VOID) << Title << char(CHAR_VOID);
+                putch(char(CHAR_VOID));
+                cout << Title;
+                putch(char(CHAR_VOID));
             #endif // TITLE_STYLE_0
             #ifdef TITLE_STYLE_1
                 for(auto i = 0;i < SCREEN_WIDTH;++i)
@@ -125,7 +127,7 @@ namespace cmd {
             #endif // TITLE_STYLE_BLOCK
             #ifdef TITLE_STYLE_2
                 setPos((SCREEN_WIDTH/2) - (Title.size()/2) -2 ,0);
-                cout << char(CHAR_CORNER_TOP_LEFT);
+                putch(char(CHAR_CORNER_TOP_LEFT));
                 for(int i = 0; i < Title.size() + 2;++i)
                     cout << char(CHAR_LINE_HORIZONTAL);
                 setPos((SCREEN_WIDTH/2) + (Title.size()/2) + 1, 0);
