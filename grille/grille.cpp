@@ -150,6 +150,8 @@ Grille deplacement( Grille grille , int direction ) {
             return deplacementHaut( grille );
         case BAS:
             return deplacementBas( grille );
+        case 0:
+            return grille;
         default:
             cerr << "Deplacement␣non−autorise !" << endl ;
             exit(1);
