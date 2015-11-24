@@ -89,7 +89,7 @@ Grille deplacementHaut(Grille grille) {
     return grille;
 }
 
-bool estTerminer(Grille grille) {
+bool estTerminer(Grille grille) {/**
     for(unsigned int y = 0; y < grille.size(); ++y)
         for(unsigned int x = 0; x < grille.at(y).size(); ++x)
             if(grille[y][x] == 0)
@@ -100,6 +100,13 @@ bool estTerminer(Grille grille) {
             or grille[y][x] == grille[y][x+1])
                 return false;
     return true;
+    */
+    if(grille == deplacement(grille,HAUT))
+        if(grille == deplacement(grille,BAS))
+            if(grille == deplacement(grille,DROITE))
+                if(grille == deplacement(grille,GAUCHE))
+                   return true;
+    return false;
 }
 
 Grille addNumber(Grille g) {
