@@ -23,6 +23,11 @@
             #include "grille/grille.h"
         #endif // GINC
 
+        #ifndef IINC
+            #define IINC
+            #include "input/Input.h"
+        #endif // IINC
+
         #ifndef G2INC
             #define G2INC
             #include "graphic/graphic.h"
@@ -55,7 +60,7 @@ using namespace std;
             int main(int,char**);
         }
         using namespace sdl;
-        #include <string>
+        #include <iostream>
         #include <SDL2/SDL.h>
 
     #else
@@ -72,20 +77,19 @@ using namespace std;
             }
             using namespace cmd;
             #include <iostream>
-            #ifdef WINDOWS
-                #define COMMAND_CLEAR "cls"
-                #define COMMAND_RESIZE "mode"
-                #include <windows.h>
-            #else
-                #ifdef LINUX
-                     #define COMMAND_CLEAR "clean"
-                #else
-                    #error no OS specified
-                #endif // LINUX
-            #endif // WINDOWS
-
-        #endif // OPENGL
+    #endif // OPENGL
     #endif // SDL
+    #ifdef WINDOWS
+        #define COMMAND_CLEAR "cls"
+        #define COMMAND_RESIZE "mode"
+        #include <windows.h>
+    #else
+        #ifdef LINUX
+            #define COMMAND_CLEAR "clear"
+        #else
+            #error no OS specified
+        #endif // LINUX
+    #endif // WINDOWS
 
     typedef vector<vector<int>> Grille  ;
     typedef vector<int>         Ligne   ;
