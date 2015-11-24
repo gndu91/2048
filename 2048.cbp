@@ -39,6 +39,8 @@
 			<Add library="SDL2.dll" />
 			<Add directory="$(#sdl2.lib)" />
 		</Linker>
+		<Unit filename="Input/Input.cpp" />
+		<Unit filename="Input/Input.h" />
 		<Unit filename="functions/functions.cpp" />
 		<Unit filename="functions/functions.h" />
 		<Unit filename="graphic/graphic.cpp" />

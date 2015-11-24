@@ -2,16 +2,19 @@
 1448119090 source:c:\2048\main.cpp
 	"main.h"
 
-1448119059 c:\2048\main.h
+1448332427 c:\2048\main.h
 	<vector>
 	<cmath>
 	<cstdlib>
+	<windows.h>
+	<conio.h>
 	<ctime>
 	"jeu/jeu.h"
 	"grille/grille.h"
+	"input/Input.h"
 	"graphic/graphic.h"
 	"functions/functions.h"
-	<string>
+	<iostream>
 	<SDL2/SDL.h>
 	<string>
 	<SDL2/SDL.h>
@@ -314,21 +317,33 @@
 	"begin_code.h"
 	"close_code.h"
 
-1448119096 c:\2048\graphic\graphic.h
+1448397479 c:\2048\graphic\graphic.h
 	"../main.h"
 
-1448119116 source:c:\2048\graphic\graphic.cpp
+1448397437 source:c:\2048\graphic\graphic.cpp
 	"graphic.h"
 
-1448118529 source:c:\2048\jeu\jeu.cpp
+1448305510 source:c:\2048\jeu\jeu.cpp
 	"jeu.h"
 
-1448012854 source:c:\2048\grille\grille.cpp
+1448303885 source:c:\2048\grille\grille.cpp
 	"grille.h"
 
 1447950048 source:c:\2048\functions\functions.cpp
 	"functions.h"
 
 1447950048 c:\2048\functions\functions.h
+	"../main.h"
+
+1448313993 source:c:\2048\input\input.cpp
+	"Input.h"
+
+1448313450 c:\2048\input\input.h
+	"../main.h"
+
+1448397443 source:c:\2048\surface\surface.cpp
+	"surface.h"
+
+1448397602 c:\2048\surface\surface.h
 	"../main.h"
 
