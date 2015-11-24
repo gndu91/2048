@@ -8,6 +8,8 @@
         #include <vector>
         #include <cmath>
         #include <cstdlib>
+        #include <windows.h>
+        #include <conio.h>
         #include <ctime>
 
     /**< Of the project */
