@@ -70,7 +70,6 @@ namespace cmd {
             cout << endl;
         }
     }
-
     namespace affichage {
         string title = "2048";
         void resizeScreen(unsigned short int w, unsigned short int h) {
