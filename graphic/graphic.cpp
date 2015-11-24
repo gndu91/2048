@@ -72,6 +72,14 @@ namespace cmd {
     }
     namespace affichage {
         string title = "2048";
+        void cursor(bool hide) {
+            CONSOLE_CURSOR_INFO cci;
+
+            GetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
+
+            cci.bVisible = not hide;
+            SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
+        }
         void resizeScreen(unsigned short int w, unsigned short int h) {
             #ifdef WINDOWS
                 string command;
@@ -153,12 +161,127 @@ namespace cmd {
                     }
         }
     }
+    short getMove(bool block) {
+        ///exit(putenv('a'));
+        ///if(getch() == 27) Escape    exit(12);
+        /**< TODO:Use curse pour linux */
+        /**< TODO:Use toupper */
+        ///cout << char(toupper('a')) << char(tolower(toupper('a')));
+        ///_cputs("");
+        ///_getch();
+        /// std::cin.putback('T');
+        char c;
+        if(kbhit()) {
+            c = toupper(_getch());
+            switch(c) {
+                case 'Z':
+                    return HAUT;
+                case 'S':
+                    return BAS;
+                case 'D':
+                    return DROITE;
+                case 'Q':
+                    return GAUCHE;
+                default:
+                    return 0;
+            }
+        } else return 0;
+    }
 }
 
 namespace sdl {
+    int j(0);
+    SDL_Window* window(0);
+    SDL_Renderer* renderer = 0;
+    vector<SDL_Rect> content;
+    Input input;
+    void init(string title) {
+        if(SDL_Init(SDL_INIT_VIDEO) < 0) {            cerr << "Error with SDL : " << SDL_GetError() << endl;            SDL_Quit();            exit(-1);        }        atexit(SDL_Quit);
+        SDL_CreateWindowAndRenderer(800, 600, 0, &window, &renderer); // SDL_WINDOW_SHOWN|SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC,&win,&ren);
+        SDL_SetWindowTitle(window,title.c_str());
+    }
+    void hide() {
+        SDL_HideWindow(window);
+    }
+    void show() {
+        SDL_ShowWindow(window);
+    }
+    void destroy() {/*
+        for(auto s : content)
+            SDL_free(s);*/
+        #warning
+        SDL_DestroyWindow(window);
+        SDL_DestroyRenderer(renderer);
+        SDL_Quit();
+    }
+    void update() {
+
+        ///Set color
+        /*
+        for(auto s : content) {
+            SDL_RenderFillRect(renderer, &s);
+        }*/
+        ////SDL_UpdateWindowSurface(window);
+
+        for(int i = 0; i < 640; ++i) {
+            if((i+j)%3==1)
+                SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+            else if((i+j)%3==0)
+                SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+            else
+                SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
+            SDL_RenderDrawPoint(renderer, i, j);
+        }
+        SDL_RenderPresent(renderer);
+        ///Reset background
+        SDL_SetRenderDrawColor(renderer, 127, 127, 128, 127);
+        ///SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer);
+    }
 
     int Main(){
-        return 1;
+        init();
+        /**
+        ///Input::showCursor(false);
+        ///SDL_GetTicks();
+        for(auto s : content)
+            SDL_BlitSurface(s.content, NULL, SDL_GetWindowSurface(window), &(s.position));
+        SDL_UpdateWindowSurface(window);
+
+
+        // if all this hex scares you, check out SDL_PixelFormatEnumToMasks()!
+        /**SDL_Surface *scren = SDL_CreateRGBSurface(0, 640, 480, 32,
+                                        0x00FF0000,
+                                        0x0000FF00,
+                                        0x000000FF,
+                                        0xFF000000);
+        SDL_Texture *sdlTexture = SDL_CreateTexture(renderer,
+                                                    SDL_PIXELFORMAT_ARGB8888,
+                                                    SDL_TEXTUREACCESS_STREAMING,
+                                                    630,
+                                                    480);
+
+
+        SDL_UpdateTexture(sdlTexture,
+                          NULL,
+                          scren->pixels,
+                          scren->pitch);
+
+        SDL_RenderPresent(renderer);
+        SDL_RenderClear(renderer);
+
+        SDL_RenderCopy(renderer,
+                       sdlTexture,
+                       NULL,
+                       NULL);
+*/
+        while (not input.finished()) {/**
+            content.back() = {i,j,1,1};*/
+            ++j;
+            update();
+        }
+        destroy();
+        return 0;
     }
     void afficheGrille(Grille g) {
 

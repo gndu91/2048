@@ -54,6 +54,8 @@
     #define HAUT    8
     #define BAS     2
 
+    #define SDL
+
 using namespace std;
     #ifdef SDL
         namespace sdl {

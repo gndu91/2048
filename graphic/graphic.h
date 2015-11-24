@@ -18,6 +18,11 @@
     }
 
     namespace sdl {
+        void init(string title = "2048");
+        void destroy();
+        void hide();
+        void show();
+        void update();
         int Main();
         void afficheGrille ( Grille g);
         namespace affichage {
