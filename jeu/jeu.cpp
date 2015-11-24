@@ -54,11 +54,12 @@ namespace cmd {
     void jeu (void) {
         affichage::resizeScreen(SCREEN_WIDTH,SCREEN_HEIGHT);
         affichage::setTitle("Game");
-        Grille grille(grilleVide());
+        affichage::cursor(true);
+        Grille grille(grilleVide()), grilleO;
 
         while(1) {
             grille = addNumber(grille);
-            grille = deplacement(grille,GAUCHE);
+            grilleO = grille;
             setPos(0,3);
 
             cout << "Actual score is:\t" << score(grille) << endl;
